@@ -1,23 +1,23 @@
 import React from "react";
-import "./HeaderElement.css";
+import "./Navbar.css";
 import Logo from "../assets/logo.jpg";
-import Navigation from "./Navigation";
+import DesktopNavbar from "./DesktopNavbar";
 import { NavLink } from "react-router-dom";
 import MobileNav from "./MobileNav";
 
 const Navbar = () => {
   return (
-    <div className="navbar">
+    <nav className="navbar">
       <div className="navbar-wrapper">
         <div className="image-wrapper">
           <NavLink to="/">
             {<img className="logo-img" src={Logo} alt="Little Lemon logo" />}
           </NavLink>
         </div>
-        <Navigation />
+        <DesktopNavbar />
         <MobileNav />
       </div>
-    </div>
+    </nav>
   );
 };
 

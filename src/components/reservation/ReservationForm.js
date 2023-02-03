@@ -27,6 +27,17 @@ const schema = yup.object({
   date: yup.string().required("Please select date and time!"),
 });
 
+// eslint-disable-next-line no-extend-native
+Date.prototype.addDays = function (days) {
+  const date = new Date(this.valueOf());
+  date.setDate(date.getDate() + days);
+  return date;
+};
+
+const handleDatePicker = (day) => {
+  return new Date().addDays(day).toISOString().slice(0, 16);
+};
+
 function ReservationForm() {
   const {
     handleSubmit,
@@ -97,6 +108,7 @@ function ReservationForm() {
               type="number"
               placeholder="2"
               min="1"
+              max="10"
               name="guests"
               {...register("guests")}
             />
@@ -121,7 +133,13 @@ function ReservationForm() {
 
           <div className="field">
             <label htmlFor="date">Date & Time</label>
-            <input type="datetime-local" name="date" {...register("date")} />
+            <input
+              type="datetime-local"
+              name="date"
+              {...register("date")}
+              min={handleDatePicker(1)}
+              max={handleDatePicker(20)}
+            />
             <span className="error-message">{errors.date?.message}</span>
           </div>
           <button className="reserve-btn" type="submit">

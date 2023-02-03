@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { NavLink } from "react-router-dom";
-import "./Navigation.css";
+import "./DesktopNavbar.css";
 
 const NavLinks = (props) => {
   const animateFrom = { opacity: 0, y: -20 };

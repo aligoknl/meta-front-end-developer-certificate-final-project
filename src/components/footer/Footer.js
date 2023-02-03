@@ -4,7 +4,7 @@ import Logo from "../assets/logo.png";
 
 const Footer = () => {
   return (
-    <div>
+    <footer>
       <div className="footer-background">
         <div className="footer-container">
           <img src={Logo} alt="Little Lemon logo" />
@@ -67,7 +67,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-    </div>
+    </footer>
   );
 };
 
