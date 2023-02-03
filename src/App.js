@@ -1,12 +1,20 @@
-import "./App.css";
+import React from "react";
+import Home from "./pages/Home";
+import Reservations from "./pages/Reservations";
+import { Route, Routes } from "react-router-dom";
+import Navbar from "./components/navbar/Navbar";
+import Footer from "./components/footer/Footer";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Little lemon restaurant</h1>
-      </header>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/reservations" element={<Reservations />} />
+      </Routes>
+      <Footer />
+    </>
   );
 }
 
